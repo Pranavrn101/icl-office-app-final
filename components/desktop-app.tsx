@@ -20,7 +20,7 @@ export default function DesktopApp() {
 useEffect(() => {
   const fetchJobCards = async () => {
     try {
-      const res = await fetch("http://192.168.1.7:3001/api/job-cards");
+      const res = await fetch("http://192.168.1.7:3005/api/job-cards");
       const data = await res.json();
 
       // 🛠️ Map each backend row to the frontend structure
