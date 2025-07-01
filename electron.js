@@ -1,6 +1,12 @@
-const { app, BrowserWindow } = require("electron");
-const path = require("path");
+import { app, BrowserWindow } from "electron";
+import path from "path";
+import { fileURLToPath } from "url";
+
 const isDev = !app.isPackaged;
+
+// __dirname workaround for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -12,9 +18,9 @@ function createWindow() {
   });
 
   if (isDev) {
-    win.loadURL("http://localhost:3000"); // dev server
+    win.loadURL("http://localhost:3000");
   } else {
-    win.loadFile(path.join(__dirname, "out/index.html")); // after export
+    win.loadFile(path.join(__dirname, "out/index.html"));
   }
 }
 
