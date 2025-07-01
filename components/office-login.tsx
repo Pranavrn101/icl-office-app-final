@@ -8,7 +8,7 @@ export default function LoginPage() {
 
   const handleSubmit = async () => {
     try {
-      const res = await fetch("http://localhost:3001/api/login", {
+      const res = await fetch("http://192.168.1.7:3005/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password, role: "office" }),

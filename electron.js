@@ -18,7 +18,7 @@ function createWindow() {
   });
 
   if (isDev) {
-    win.loadURL("http://localhost:3000");
+    win.loadURL("http://192.168.1.7:3000");
   } else {
     win.loadFile(path.join(__dirname, "out/index.html"));
   }

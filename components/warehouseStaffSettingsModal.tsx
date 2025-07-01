@@ -27,7 +27,7 @@ export function WarehouseStaffModal({ open, onClose }: WarehouseStaffModalProps)
 
   const fetchStaff = async () => {
     try {
-      const res = await fetch("http://localhost:3001/api/warehouse-staff")
+      const res = await fetch("http://192.168.1.7:3005/api/warehouse-staff")
       const data = await res.json()
       setStaff(data)
     } catch (err) {
@@ -38,7 +38,7 @@ export function WarehouseStaffModal({ open, onClose }: WarehouseStaffModalProps)
   const addStaff = async () => {
     if (!newName.trim()) return
     try {
-      await fetch("http://localhost:3001/api/warehouse-staff", {
+      await fetch("http://192.168.1.7:3005/api/warehouse-staff", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: newName }),
@@ -52,7 +52,7 @@ export function WarehouseStaffModal({ open, onClose }: WarehouseStaffModalProps)
 
   const deleteStaff = async (id: number) => {
     try {
-      await fetch(`http://localhost:3001/api/warehouse-staff/${id}`, {
+      await fetch(`http://192.168.1.7:3005/api/warehouse-staff/${id}`, {
         method: "DELETE",
       })
       fetchStaff()

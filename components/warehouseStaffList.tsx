@@ -17,7 +17,7 @@ export default function WarehouseStaffList() {
 
   // Fetch all staff
   const fetchStaff = async () => {
-    const res = await fetch("http://localhost:3001/api/warehouse-staff")
+    const res = await fetch("http://192.168.1.7:3005/api/warehouse-staff")
     const data = await res.json()
     setStaffList(data)
   }
@@ -29,7 +29,7 @@ export default function WarehouseStaffList() {
   // Add new staff
   const handleAddStaff = async () => {
     if (!newStaff.trim()) return
-    await fetch("http://localhost:3001/api/warehouse-staff", {
+    await fetch("http://192.168.1.7:3005/api/warehouse-staff", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: newStaff }),
@@ -40,7 +40,7 @@ export default function WarehouseStaffList() {
 
   // Delete staff
   const handleDelete = async (id: number) => {
-    await fetch(`http://localhost:3001/api/warehouse-staff/${id}`, {
+    await fetch(`http://192.168.1.7:3005/api/warehouse-staff/${id}`, {
       method: "DELETE",
     })
     fetchStaff()

@@ -20,7 +20,7 @@ app.whenReady().then(() => {
 
   // Fix variable name and path
   if (isDev) {
-    mainWindow.loadURL("http://localhost:3000");
+    mainWindow.loadURL("http://192.168.1.7:3000");
   } else {
     // Change 'out' to 'build' (or whatever your React build folder is called)
     mainWindow.loadFile(path.join(__dirname, "../build/index.html"));
@@ -45,7 +45,7 @@ ipcMain.handle('open-preview-window', async (_, mawbNumber) => {
 
   // This will only work in development
   if (isDev) {
-    await previewWin.loadURL(`http://localhost:3000/pdf-preview?mawb=${mawbNumber}`)
+    await previewWin.loadURL(`http://192.168.1.7:3000/pdf-preview?mawb=${mawbNumber}`)
   } else {
     // You'll need to handle this for production
     // Maybe load a local HTML file or disable this feature in production

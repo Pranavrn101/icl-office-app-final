@@ -11,7 +11,7 @@ export function JobCardList() {
   useEffect(() => {
     const fetchJobCards = async () => {
       try {
-        const res = await fetch("http://localhost:3001/api/job-cards")
+        const res = await fetch("http://192.168.1.7:3005/api/job-cards")
         const rawData = await res.json()
 
         // Transform snake_case to camelCase

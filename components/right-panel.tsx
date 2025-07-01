@@ -59,7 +59,7 @@ function parseETA(etaStr: string): string {
   formData.append("file", file)
 
   try {
-    const response = await fetch("http://localhost:3001/api/extract-pdf-data", {
+    const response = await fetch("http://192.168.1.7:3005/api/extract-pdf-data", {
       method: "POST",
       body: formData,
     })
@@ -93,7 +93,7 @@ function parseETA(etaStr: string): string {
     }
 
 
-    const response = await fetch("http://localhost:3001/api/job-cards", {
+    const response = await fetch("http://192.168.1.7:3005/api/job-cards", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),

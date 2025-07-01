@@ -59,6 +59,6 @@ app.get("api/report/:mawb", async (req, res) => {
 
 
 app.listen(3001, () => {
-  console.log("Server is running on http://localhost:3001")
+  console.log("Server is running on http://192.168.1.7:3001")
 })
 
