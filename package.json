@@ -89,6 +89,7 @@
   "build": {
     "appId": "com.icl.logistics",
     "productName": "ICL Logistics App",
+    "publish": null,
     "directories": {
       "output": "release"
     },
