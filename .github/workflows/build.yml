@@ -23,8 +23,10 @@ jobs:
 
       - name: Build Electron App
         run: npm run dist
+        
       - name: Upload Windows .exe artifact
         uses: actions/upload-artifact@v4
         with:
-          name: warehouse-app-exe
-          path: out/make/squirrel.windows/x64/*.exe
+          name: office-app-exe
+          # CHANGE THIS LINE from the old path to the new one:
+          path: release/*.exe # <-- This is the corrected path
