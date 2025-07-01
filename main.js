@@ -13,8 +13,11 @@ app.whenReady().then(() => {
       contextIsolation: true
     }
   })
-
-  mainWindow.loadURL('http://localhost:3002') // or load local file after build
+ if (isDev) {
+    win.loadURL("http://localhost:3000");
+  } else {
+    win.loadFile(path.join(__dirname, "out/index.html"));
+  }
 })
 
 ipcMain.handle('open-preview-window', async (_, mawbNumber) => {
