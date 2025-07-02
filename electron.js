@@ -37,7 +37,10 @@ const __dirname = path.dirname(__filename);
 //   win.webContents.openDevTools();
 // }
 // ...................................................................
-
+// ===================================================================
+// THE FIX: Add this line to disable GPU hardware acceleration.
+app.disableHardwareAcceleration();
+// ===================================================================
 //Test html
 function createWindow() {
   const win = new BrowserWindow({ /* ... your options ... */ });
